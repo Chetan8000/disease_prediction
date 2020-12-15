@@ -35,4 +35,4 @@ def predict():
     return(render_template("diabetes.html", prediction_text=prediction))       
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
