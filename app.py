@@ -34,5 +34,7 @@ def predict():
         prediction = "No need to fear. You have no dangerous symptoms of the disease"
     return(render_template("diabetes.html", prediction_text=prediction))       
 
-if __name__ == "__main__":
-    app.run()
+#if __name__ == "__main__":
+#    app.run()
+
+app.run(host='0.0.0.0', port=5000)
