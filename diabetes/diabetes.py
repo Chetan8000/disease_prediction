@@ -17,7 +17,7 @@ def ValuePredictor(to_predict, size):
         Age
     '''
     if (size == 6):
-        loaded_model = joblib.load(constant.PKLPath)
+        loaded_model = joblib.load(PKLPath)
         result = loaded_model.predict(to_predict)
     return result[0]
 
