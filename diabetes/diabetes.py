@@ -5,7 +5,7 @@ import pickle
 import streamlit as st
 
 
-PKLPath = 'diabetes_model.pkl'
+PKLPath = 'diabetes/diabetes_model.pkl'
 
 
 def ValuePredictor(to_predict, size):

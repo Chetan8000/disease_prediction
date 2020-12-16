@@ -4,7 +4,7 @@ import numpy as np
 import pickle
 import streamlit as st
 
-PKLPath = 'cancer_model.pkl'
+PKLPath = 'breast_cancer/cancer_model.pkl'
 
 def ValuePredictor(to_predict, size):
     '''	Mean of the Concave Points
