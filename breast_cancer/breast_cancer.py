@@ -28,11 +28,11 @@ def main():
     """
 
     st.markdown(html_temp, unsafe_allow_html=True)
-    cp = st.text_input("Mean of the Concave Points", "Type Here")
-    area = st.text_input("Mean of the Area", "Type Here")
-    radius = st.text_input("Mean of the Radius", "Type Here")
-    perimeters = st.text_input("Mean of the Perimeters", "Type Here")
-    concavity = st.text_input("Mean of the Concavity", "Type Here")
+    cp = st.number_input("Mean of the Concave Points")
+    area = st.number_input("Mean of the Area")
+    radius = st.number_input("Mean of the Radius")
+    perimeters = st.number_input("Mean of the Perimeters")
+    concavity = st.number_input("Mean of the Concavity")
     to_predict_list = [cp, area, radius, perimeters, concavity]
     size = len(to_predict_list)
     result = ""
