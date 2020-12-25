@@ -26,6 +26,7 @@ def main():
     <h2 style="color:white;text-align:center;">Know Your Chances Of Getting Breast Cancer In One Click! </h2>
     </div>
     """
+
     st.markdown(html_temp, unsafe_allow_html=True)
     cp = st.text_input("Mean of the Concave Points", "Type Here")
     area = st.text_input("Mean of the Area", "Type Here")

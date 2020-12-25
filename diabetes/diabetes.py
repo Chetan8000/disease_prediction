@@ -1,9 +1,9 @@
 import joblib
 import numpy as np
-#import constant
+# import constant
 import pickle
 import streamlit as st
-
+import time
 
 PKLPath = 'diabetes/diabetes_model.pkl'
 
@@ -30,12 +30,19 @@ def main():
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
-    no_pregnencies = st.text_input("No. of Pregnencies", "Type Here")
-    glucose_level = st.text_input("Glucose Level", "Type Here")
-    current_bp = st.text_input("Current Blood Pressure", "Type Here")
-    bmi = st.text_input("Enter the Body Mass Index", "Type Here")
-    dpf = st.text_input("Diabetes Pedigree Function", "Type Here")
-    age = st.text_input("Age", "Type Here")
+
+    status = st.radio('Select Gender', ('Male', 'Female'))
+    if status == 'Female':
+        no_pregnencies = st.number_input("No.of Pregnencies",value=0)
+    else:
+        no_pregnencies = 0
+
+    #no_pregnencies = st.text_input("No. of Pregnencies", "")
+    glucose_level = st.number_input("Glucose Level")
+    current_bp = st.number_input("Current Blood Pressure")
+    bmi = st.number_input("Enter the Body Mass Index")
+    dpf = st.number_input("Diabetes Pedigree Function")
+    age = st.number_input("Age")
     to_predict_list = [no_pregnencies, glucose_level, current_bp, bmi, dpf, age]
     size = len(to_predict_list)
     result = ""
@@ -51,5 +58,5 @@ def main():
     st.success(prediction)
     if st.button("About Diabetes"):
         st.text("https://en.wikipedia.org/wiki/Diabetes")
-        
+
 
