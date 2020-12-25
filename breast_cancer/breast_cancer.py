@@ -1,7 +1,8 @@
 import joblib
 import numpy as np
-#import constant
+from breast_cancer import constant
 import pickle
+import webbrowser
 import streamlit as st
 
 PKLPath = 'breast_cancer/cancer_model.pkl'
@@ -47,6 +48,20 @@ def main():
 
     st.success(prediction)
     if st.button("About Diabetes"):
-        st.text("https://en.wikipedia.org/wiki/Breast_cancer")
+        webbrowser.open_new_tab("https://en.wikipedia.org/wiki/Breast_cancer")
+
+    info_about = '''
+    <div id="footer" class="text-center center-block">
+          <p>© 2020 Author: Chetan Borse</p>
+    </div>
+    '''
+    st.markdown(info_about, unsafe_allow_html=True)
+
+    html = f"""<div
+    <ul class="mylinks">
+	<a href='https://github.com/Chetan8000/'><img src='data:image/png;base64,{constant.Github}'></a>
+        <a href='https://www.linkedin.com/in/borsechetan800/'><img src='data:image/png;base64,{constant.LinkedIN}'></a>
+    </ul>    </div>"""
+    st.markdown(html, unsafe_allow_html=True)
 
 

@@ -1,9 +1,10 @@
 import joblib
 import numpy as np
-# import constant
+from diabetes import constant
 import pickle
 import streamlit as st
 import time
+import webbrowser
 
 PKLPath = 'diabetes/diabetes_model.pkl'
 
@@ -40,15 +41,15 @@ def main():
 	</style>
 	'''
 
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+    # st.markdown(page_bg_img, unsafe_allow_html=True)
 
     status = st.radio('Select Gender', ('Male', 'Female'))
     if status == 'Female':
-        no_pregnencies = st.number_input("No.of Pregnencies",value=0)
+        no_pregnencies = st.number_input("No.of Pregnencies", value=0)
     else:
         no_pregnencies = 0
 
-    #no_pregnencies = st.text_input("No. of Pregnencies", "")
+    # no_pregnencies = st.text_input("No. of Pregnencies", "")
     glucose_level = st.number_input("Glucose Level")
     current_bp = st.number_input("Current Blood Pressure")
     bmi = st.number_input("Enter the Body Mass Index")
@@ -68,6 +69,19 @@ def main():
 
     st.success(prediction)
     if st.button("About Diabetes"):
-        st.text("https://en.wikipedia.org/wiki/Diabetes")
+        webbrowser.open_new_tab("https://en.wikipedia.org/wiki/Diabetes")
 
+    info_about = '''
+    <div id="footer" class="text-center center-block">
+          <p>© 2020 Author: Chetan Borse</p>
+    </div>
+    '''
+    st.markdown(info_about, unsafe_allow_html=True)
+
+    html = f"""<div
+    <ul class="mylinks">
+	<a href='https://github.com/Chetan8000/'><img src='data:image/png;base64,{constant.Github}'></a>
+        <a href='https://www.linkedin.com/in/borsechetan800/'><img src='data:image/png;base64,{constant.LinkedIN}'></a>
+    </ul>    </div>"""
+    st.markdown(html, unsafe_allow_html=True)
 

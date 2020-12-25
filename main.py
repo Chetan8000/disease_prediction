@@ -5,10 +5,7 @@ from heart.heart import main as heart
 import streamlit as st
 from multiapp import MultiApp
 
-'''
-Created on Wed December 16
-@author: Chetan Borse
-'''
+
 
 app = MultiApp()
 

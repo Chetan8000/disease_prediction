@@ -1,6 +1,8 @@
 import joblib
 import numpy as np
 import streamlit as st
+import webbrowser
+from heart import constant
 
 PKLPath = 'heart/heart_model.pkl'
 
@@ -37,7 +39,7 @@ def main():
 	</style>
 	'''
 
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+#    st.markdown(page_bg_img, unsafe_allow_html=True)
     chest_status = st.radio('Chest Pain Type', ('Typical Angina', 'Atypical Angina', 'Non-Anginal Pain', 'Asymptomatic'))
     pain_limit = 0
     if (chest_status == 'Typical Angina'):
@@ -98,4 +100,23 @@ def main():
             prediction = "No need to fear. You have no dangerous symptoms of the disease"
 
     st.success(prediction)
+    if st.button("About Diabetes"):
+        webbrowser.open_new_tab("https://en.wikipedia.org/wiki/Cardiovascular_disease")
+
+    info_about = '''
+    <div id="footer" class="text-center center-block">
+          <p>© 2020 Author: Chetan Borse</p>
+    </div>
+    '''
+    st.markdown(info_about, unsafe_allow_html=True)
+
+    html = f"""<div
+    <ul class="mylinks">
+	<a href='https://github.com/Chetan8000/'><img src='data:image/png;base64,{constant.Github}'></a>
+        <a href='https://www.linkedin.com/in/borsechetan800/'><img src='data:image/png;base64,{constant.LinkedIN}'></a>
+    </ul>    </div>"""
+    st.markdown(html, unsafe_allow_html=True)
+
+
+
 

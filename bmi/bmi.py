@@ -1,5 +1,5 @@
 import streamlit as st
-
+from bmi import constant
 
 
 def main():
@@ -18,13 +18,13 @@ def main():
     page_bg_img = '''
       <style>
  	body {
-	background-image: url("https://user-images.githubusercontent.com/53088237/103136140-cdd8f380-46e3-11eb-9fce-355869e5875b.jpg");
+	background-image: url("https://user-images.githubusercontent.com/53088237/103136369-c286c780-46e5-11eb-95b6-3a8d4a59a14b.jpg");
 	background-size: cover;
 	}
 	</style>
 	'''
 
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+#    st.markdown(page_bg_img, unsafe_allow_html=True)
 
     weight = st.number_input("Enter your weight (in kgs)")
 
@@ -77,5 +77,17 @@ def main():
         elif (bmi >= 30):
             st.error("Extremely Overweight")
 
+    info_about = '''
+    <div id="footer" class="text-center center-block">
+          <p>© 2020 Author: Chetan Borse</p>
+    </div>
+    '''
+    st.markdown(info_about, unsafe_allow_html=True)
 
+    html = f"""<div
+    <ul class="mylinks">
+	<a href='https://github.com/Chetan8000/'><img src='data:image/png;base64,{constant.Github}'></a>
+        <a href='https://www.linkedin.com/in/borsechetan800/'><img src='data:image/png;base64,{constant.LinkedIN}'></a>
+    </ul>    </div>"""
+    st.markdown(html, unsafe_allow_html=True)
 
