@@ -31,6 +31,17 @@ def main():
     """
     st.markdown(html_temp, unsafe_allow_html=True)
 
+    page_bg_img = '''
+      <style>
+ 	body {
+	background-image: url("https://user-images.githubusercontent.com/53088237/103136113-88b4c180-46e3-11eb-8780-4ae10bdbe304.jpeg");
+	background-size: cover;
+	}
+	</style>
+	'''
+
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+
     status = st.radio('Select Gender', ('Male', 'Female'))
     if status == 'Female':
         no_pregnencies = st.number_input("No.of Pregnencies",value=0)

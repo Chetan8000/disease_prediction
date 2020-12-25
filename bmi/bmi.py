@@ -13,8 +13,19 @@ def main():
 
     </div>
     """
-
     st.markdown(html_temp, unsafe_allow_html=True)
+
+    page_bg_img = '''
+      <style>
+ 	body {
+	background-image: url("https://user-images.githubusercontent.com/53088237/103136140-cdd8f380-46e3-11eb-9fce-355869e5875b.jpg");
+	background-size: cover;
+	}
+	</style>
+	'''
+
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+
     weight = st.number_input("Enter your weight (in kgs)")
 
     status = st.radio('Select your height format: ',

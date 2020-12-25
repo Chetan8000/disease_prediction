@@ -5,13 +5,6 @@ import streamlit as st
 PKLPath = 'heart/heart_model.pkl'
 
 
-def ValuePredictor(to_predict_list, size):
-    to_predict = np.array(to_predict_list).reshape(1,size)
-    if(size==7):
-        loaded_model = joblib.load(r'C:\Users\Mahesh Sharma\Desktop\HealthApp\Indivisual_Deployment\Heart_API\heart_model.pkl')
-        result = loaded_model.predict(to_predict)
-    return result[0]
-
 def ValuePredictor(to_predict, size):
     '''	Chest Pain Type
         Resting Blood Pressure (in mm Hg)
@@ -35,7 +28,16 @@ def main():
     """
     st.markdown(html_temp, unsafe_allow_html=True)
 
+    page_bg_img = '''
+      <style>
+ 	body {
+	background-image: url("https://user-images.githubusercontent.com/53088237/103136207-5ce60b80-46e4-11eb-983e-d0fd7cb7f01b.jpg");
+	background-size: cover;
+	}
+	</style>
+	'''
 
+    st.markdown(page_bg_img, unsafe_allow_html=True)
     chest_status = st.radio('Chest Pain Type', ('Typical Angina', 'Atypical Angina', 'Non-Anginal Pain', 'Asymptomatic'))
     pain_limit = 0
     if (chest_status == 'Typical Angina'):
