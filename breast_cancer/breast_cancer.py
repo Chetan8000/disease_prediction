@@ -21,7 +21,7 @@ def ValuePredictor(to_predict, size):
 
 
 def main():
-    st.title("Know Your Chances Of Getting Breast Cancer In One Click!")
+    #st.title("Know Your Chances Of Getting Breast Cancer In One Click!")
     html_temp = """
     <div style="background-color:tomato;padding:10px">
     <h2 style="color:white;text-align:center;">Know Your Chances Of Getting Breast Cancer In One Click! </h2>
